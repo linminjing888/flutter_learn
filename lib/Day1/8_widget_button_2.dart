@@ -24,24 +24,21 @@ class MJHomePage extends StatelessWidget {
 }
 
 class MJContentBody extends StatelessWidget {
-  final imgUrl =
-      "https://upload-images.jianshu.io/upload_images/16117826-caad4bd33f9db69c.jpg";
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Image.asset("assets/images/app_icon.png"), // 本地图片
-        // Image.network(imgUrl), // 网络图片
-        FadeInImage.assetNetwork(
-          placeholder: "assets/images/app_icon.png",
-          image: imgUrl,
-        ),
-        Image(
-          image: NetworkImage(imgUrl),
-          width: 200,
-          height: 200,
-          fit: BoxFit.fitHeight, // 适应高度
-          alignment: Alignment.centerRight,
+        ButtonTheme(
+          minWidth: 45, // 设置比较小的按钮 (默认88 36)
+          height: 45,
+          child: RaisedButton(
+            // 去除周围间距 (默认不到48，会扩充到48)
+            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            padding: EdgeInsets.all(2), // 设置内间距
+            child: Text("1112"),
+            color: Colors.orange,
+            onPressed: () => print("111"),
+          ),
         ),
       ],
     );

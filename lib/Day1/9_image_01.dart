@@ -31,7 +31,12 @@ class MJContentBody extends StatelessWidget {
     return Column(
       children: <Widget>[
         Image.asset("assets/images/app_icon.png"), // 本地图片
-        Image.network(imgUrl), // 网络图片
+        // Image.network(imgUrl), // 网络图片
+        FadeInImage.assetNetwork(
+          // 占位图
+          placeholder: "assets/images/app_icon.png",
+          image: imgUrl,
+        ),
         Image(
           image: NetworkImage(imgUrl),
           width: 200,
