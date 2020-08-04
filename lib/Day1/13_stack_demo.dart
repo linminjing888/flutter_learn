@@ -30,6 +30,7 @@ class MJContentBody extends StatefulWidget {
 }
 
 class _State extends State<MJContentBody> {
+  bool _love = false;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -54,9 +55,14 @@ class _State extends State<MJContentBody> {
                       style: TextStyle(fontSize: 20),
                     ),
                     IconButton(
-                      color: Colors.white,
+                      color: _love ? Colors.red : Colors.white,
                       icon: Icon(Icons.favorite),
-                      onPressed: () => print("收藏按钮点击了"),
+                      onPressed: () {
+                        print("收藏按钮点击了");
+                        setState(() {
+                          _love = !_love;
+                        });
+                      },
                     )
                   ],
                 ))),

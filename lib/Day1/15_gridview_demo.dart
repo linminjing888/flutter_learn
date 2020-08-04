@@ -46,8 +46,8 @@ class GridViewDemo3 extends StatelessWidget {
         ),
         itemBuilder: (context, index) {
           return Container(
-            color: Color.fromRGBO(Random().nextInt(256), Random().nextInt(256),
-                Random().nextInt(256), 1.0),
+            color: Color.fromRGBO(Random().nextInt(256),
+                Random().nextInt(256), Random().nextInt(256), 1.0),
           );
         });
   }
