@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/DouBan/Pages/main_page.dart';
+import 'package:flutter_learn/DouBan/Main/main_page.dart';
 
 main() => runApp(MyApp());
 

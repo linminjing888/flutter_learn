@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/DouBan/Pages/initialize_items.dart';
+import 'package:flutter_learn/DouBan/Main/initialize_items.dart';
 
 class MJMainPage extends StatefulWidget {
   @override

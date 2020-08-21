@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class MJHomeContent extends StatefulWidget {
+class MJGroupContent extends StatefulWidget {
   @override
-  _MJHomeContentState createState() => _MJHomeContentState();
+  _MJGroupContentState createState() => _MJGroupContentState();
 }
 
-class _MJHomeContentState extends State<MJHomeContent> {
+class _MJGroupContentState extends State<MJGroupContent> {
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Center(
         child: Text(
-          "首页内容",
+          "小组",
           style: TextStyle(fontSize: 30),
         ),
       ),

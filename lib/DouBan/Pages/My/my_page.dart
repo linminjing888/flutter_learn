@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/DouBan/Pages/my_content.dart';
+import 'package:flutter_learn/DouBan/Pages/My/my_content.dart';
 
 class MJMyPage extends StatelessWidget {
   @override

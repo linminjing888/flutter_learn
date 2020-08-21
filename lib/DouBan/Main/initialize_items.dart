@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/DouBan/Pages/my_page.dart';
+import 'package:flutter_learn/DouBan/Pages/Group/group_page.dart';
+import 'package:flutter_learn/DouBan/Pages/My/my_page.dart';
 
 import 'bottom_bar_item.dart';
-import 'home_page.dart';
+import '../Pages/Home/home_page.dart';
 
 List<MJBottomBarItem> items = [
   MJBottomBarItem("首页", "home"),
@@ -13,7 +14,7 @@ List<MJBottomBarItem> items = [
 
 List<Widget> pages = [
   MJhomePage(),
-  MJhomePage(),
-  MJhomePage(),
+  MJGroupPage(),
+  MJGroupPage(),
   MJMyPage(),
 ];
