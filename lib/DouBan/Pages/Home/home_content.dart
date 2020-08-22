@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/DouBan/Model/home_model.dart';
 import 'package:flutter_learn/DouBan/NetWork/home_request.dart';
+import 'package:flutter_learn/DouBan/Pages/Home/home_movie_item.dart';
 
 class MJHomeContent extends StatefulWidget {
   @override
@@ -25,10 +26,7 @@ class _MJHomeContentState extends State<MJHomeContent> {
     return ListView.builder(
       itemCount: movies.length,
       itemBuilder: (context, index) {
-        return ListTile(
-          title: Text("${movies[index].title}"),
-          leading: Image.network("${movies[index].imageUrl}"),
-        );
+        return MJMovieWidget(movies[index]);
       },
     );
   }
