@@ -24,10 +24,7 @@ class MJMovieWidget extends StatelessWidget {
           SizedBox(
             height: 6,
           ),
-          Text(
-            "333",
-            style: TextStyle(fontSize: 20),
-          ),
+          buildContentDes(),
         ],
       ),
     );
@@ -54,15 +51,24 @@ class MJMovieWidget extends StatelessWidget {
           SizedBox(
             width: 8,
           ),
-          buildContentInfo(),
-          SizedBox(
-            width: 8,
+          Expanded(
+            child: IntrinsicHeight(
+              // 子控件同一个高度
+              child: Row(
+                children: <Widget>[
+                  buildContentInfo(),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  buildDashedLine(),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  buildContentLove(),
+                ],
+              ),
+            ),
           ),
-          buildDashedLine(),
-          SizedBox(
-            width: 8,
-          ),
-          buildContentLove(),
         ],
       ),
     );
@@ -124,7 +130,7 @@ class MJMovieWidget extends StatelessWidget {
 
   Widget buildDashedLine() {
     return Container(
-      height: 100,
+      // height: 100,
       child: MJDashedLine(
         lineAxis: Axis.vertical,
         lineWidth: 1,
@@ -135,7 +141,7 @@ class MJMovieWidget extends StatelessWidget {
 
   Widget buildContentLove() {
     return Container(
-      height: 100,
+      // height: 100,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -150,5 +156,17 @@ class MJMovieWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget buildContentDes() {
+    return Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(8),
+        decoration: BoxDecoration(
+            color: Color(0xfff2f2f2), borderRadius: BorderRadius.circular(3)),
+        child: Text(
+          "${movie.des}",
+          style: TextStyle(color: Color(0xff666666)),
+        ));
   }
 }
