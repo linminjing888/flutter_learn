@@ -8,24 +8,29 @@ class MJMovieWidget extends StatelessWidget {
   MJMovieWidget(this.movie);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(width: 8, color: Colors.black12)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          buildHeader(),
-          SizedBox(
-            height: 6,
-          ),
-          buildContent(),
-          SizedBox(
-            height: 6,
-          ),
-          buildContentDes(),
-        ],
+    return GestureDetector(
+      onTap: () {
+        print("222");
+      },
+      child: Container(
+        padding: EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          border: Border(bottom: BorderSide(width: 8, color: Colors.black12)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            buildHeader(),
+            SizedBox(
+              height: 6,
+            ),
+            buildContent(),
+            SizedBox(
+              height: 6,
+            ),
+            buildContentDes(),
+          ],
+        ),
       ),
     );
   }
