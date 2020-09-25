@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MJSectionPage extends StatelessWidget {
+  static const String routeName = "/detail";
+
   final String _message;
   MJSectionPage(this._message);
 
