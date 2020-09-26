@@ -45,6 +45,10 @@ class _MJTestPageState extends State<MJTestPage>
     // 3.Tween 范围大小
     _sizeAnimation = Tween(begin: 50.0, end: 150.0).animate(animation);
 
+    _container.addListener(() {
+      setState(() {});
+    });
+
     _container.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         _container.reverse();
@@ -56,13 +60,16 @@ class _MJTestPageState extends State<MJTestPage>
 
   @override
   Widget build(BuildContext context) {
-    print("build");
     return Scaffold(
       appBar: AppBar(
         title: Text("导航"),
       ),
       body: Center(
-        child: MJAnimation(_sizeAnimation),
+        child: Icon(
+          Icons.favorite,
+          color: Colors.red,
+          size: _sizeAnimation.value,
+        ),
       ),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.play_arrow),
@@ -86,18 +93,5 @@ class _MJTestPageState extends State<MJTestPage>
   void dispose() {
     _container.dispose();
     super.dispose();
-  }
-}
-
-class MJAnimation extends AnimatedWidget {
-  MJAnimation(Animation ani) : super(listenable: ani);
-  @override
-  Widget build(BuildContext context) {
-    Animation anim = listenable;
-    return Icon(
-      Icons.favorite,
-      color: Colors.red,
-      size: anim.value,
-    );
   }
 }

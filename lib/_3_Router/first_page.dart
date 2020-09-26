@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/Day3/section_page.dart';
+import 'package:flutter_learn/_3_Router/router.dart';
+import 'package:flutter_learn/_3_Router/section_page.dart';
+import 'package:flutter_learn/_3_Router/three_page.dart';
 
 main() {
   runApp(MyApp());
@@ -11,12 +13,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "导航传值",
-      home: MJTestPage(),
+      initialRoute: MJRouter.initialRoute,
+      routes: MJRouter.routes,
+      onGenerateRoute: MJRouter.onGenerateRoute,
     );
   }
 }
 
 class MJTestPage extends StatefulWidget {
+  static const String routeName = "/";
   @override
   _MJTestPageState createState() => _MJTestPageState();
 }
@@ -35,22 +40,36 @@ class _MJTestPageState extends State<MJTestPage> {
           children: <Widget>[
             Text(_homeMessage),
             RaisedButton(
-              onPressed: () => jumpPage(context),
+              onPressed: () => _jumpPage(context),
               child: Text(
-                "跳转页面",
+                "正常跳转",
                 style: TextStyle(color: Colors.orange),
               ),
-            )
+            ),
+            RaisedButton(
+              onPressed: () => _jumpThree(context),
+              child: Text(
+                "路由跳转",
+                style: TextStyle(color: Colors.orange),
+              ),
+            ),
+            RaisedButton(
+              onPressed: () => _jumpDetailPage(context),
+              child: Text(
+                "路由传参跳转",
+                style: TextStyle(color: Colors.orange),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  void jumpPage(context) {
+  void _jumpPage(context) {
     Future result =
         Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
-      return MJSectionPage("this is a message");
+      return MJSectionPage("111");
     }));
     result.then((value) {
       print(value);
@@ -60,5 +79,13 @@ class _MJTestPageState extends State<MJTestPage> {
         });
       }
     });
+  }
+
+  void _jumpThree(context) {
+    Navigator.of(context).pushNamed(ThreePages.routename, arguments: "2222");
+  }
+
+  void _jumpDetailPage(context) {
+    Navigator.of(context).pushNamed(MJSectionPage.routeName, arguments: "3333");
   }
 }

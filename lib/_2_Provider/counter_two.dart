@@ -1,23 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/Day2/counter_view_model.dart';
-// import 'package:flutter_learn/DouBan/Main/main_page.dart';
+import 'package:flutter_learn/_2_Provider/counter_view_model.dart';
+import 'package:flutter_learn/_2_Provider/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 main() {
-  // 2.在应用程序顶层 ChangeNotifierProvider
-  runApp(ChangeNotifierProvider(
-    create: (ctx) {
-      return MJCounterViewModel();
-    },
+  runApp(MultiProvider(
+    // 多个
+    providers: [
+      ChangeNotifierProvider(
+        create: (ctx) => MJCounterViewModel(),
+      ),
+      ChangeNotifierProvider(
+        create: (ctx) => MJUserViewModel(UserInfo("sss", 22, "ee")),
+      ),
+    ],
     child: MyApp(),
   ));
 }
+
+// 单个
+// main() {
+//   // 2.在应用程序顶层 ChangeNotifierProvider
+//   runApp(ChangeNotifierProvider(
+//     create: (ctx) {
+//       return MJCounterViewModel();
+//     },
+//     child: MyApp(),
+//   ));
+// }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "状态管理",
+      title: "全局状态管理",
       home: MyHomePage(),
     );
   }
@@ -36,6 +52,8 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             MJShowData1(),
             MJShowData2(),
+            MJShowData3(),
+            MJShowData4(),
           ],
         ),
       ),
@@ -84,6 +102,41 @@ class MJShowData2 extends StatelessWidget {
           print("data02 Consumer build方法被执行");
           return Text(
             "当前计数${value.counter}",
+            style: TextStyle(fontSize: 20),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class MJShowData3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.cyan,
+      child: Consumer<MJUserViewModel>(
+        builder: (context, value, child) {
+          return Text(
+            "当前计数${value.user.nickName}",
+            style: TextStyle(fontSize: 20),
+          );
+        },
+      ),
+    );
+  }
+}
+
+// 同时传值两个
+class MJShowData4 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.green,
+      child: Consumer2<MJUserViewModel, MJCounterViewModel>(
+        builder: (context, value1, value2, child) {
+          return Text(
+            "当前计数${value1.user.nickName} counter:${value2.counter}",
             style: TextStyle(fontSize: 20),
           );
         },
