@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 main() {
@@ -11,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "交织动画",
+      title: "动画",
       home: MJTestPage(),
     );
   }
@@ -26,9 +24,6 @@ class _MJTestPageState extends State<MJTestPage>
     with SingleTickerProviderStateMixin {
   AnimationController _container;
   Animation _sizeAnimation;
-  Animation _colorAnimation;
-  Animation _rotationAnim;
-  Animation _opacityAnim;
 
   @override
   void initState() {
@@ -39,7 +34,7 @@ class _MJTestPageState extends State<MJTestPage>
       vsync: this,
       // lowerBound: 50,
       // upperBound: 150,
-      duration: Duration(seconds: 2),
+      duration: Duration(seconds: 1),
     );
 
     // 2.curve 动画效果
@@ -48,11 +43,7 @@ class _MJTestPageState extends State<MJTestPage>
       curve: Curves.linear,
     );
     // 3.Tween 范围大小
-    _sizeAnimation = Tween(begin: 10.0, end: 130.0).animate(_container);
-    _colorAnimation =
-        ColorTween(begin: Colors.blue, end: Colors.red).animate(_container);
-    _rotationAnim = Tween(begin: 0.0, end: 2 * pi).animate(_container);
-    _opacityAnim = Tween(begin: 0.2, end: 1.0).animate(_container);
+    _sizeAnimation = Tween(begin: 50.0, end: 150.0).animate(animation);
 
     _container.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
@@ -74,17 +65,10 @@ class _MJTestPageState extends State<MJTestPage>
         child: AnimatedBuilder(
           animation: _sizeAnimation,
           builder: (context, child) {
-            return Opacity(
-              opacity: _opacityAnim.value, //透明度
-              child: Transform(
-                transform: Matrix4.rotationZ(_rotationAnim.value), //旋转角度
-                alignment: Alignment.center,
-                child: Container(
-                  width: _sizeAnimation.value, //尺寸大小
-                  height: _sizeAnimation.value,
-                  color: _colorAnimation.value, //颜色
-                ),
-              ),
+            return Icon(
+              Icons.favorite,
+              color: Colors.red,
+              size: _sizeAnimation.value,
             );
           },
         ),
