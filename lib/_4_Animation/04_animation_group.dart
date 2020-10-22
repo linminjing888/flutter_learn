@@ -68,7 +68,7 @@ class _MJTestPageState extends State<MJTestPage>
     print("build");
     return Scaffold(
       appBar: AppBar(
-        title: Text("导航"),
+        title: Text("交织动画"),
       ),
       body: Center(
         child: AnimatedBuilder(

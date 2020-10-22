@@ -20,15 +20,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MJTestPage extends StatefulWidget {
+class MJFirstPage extends StatefulWidget {
   static const String routeName = "/";
   @override
-  _MJTestPageState createState() => _MJTestPageState();
+  _MJFirstPageState createState() => _MJFirstPageState();
 }
 
-class _MJTestPageState extends State<MJTestPage> {
+class _MJFirstPageState extends State<MJFirstPage> {
   String _homeMessage = "第一页";
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
