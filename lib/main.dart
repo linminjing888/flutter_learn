@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/_4_Animation/image_detail_page.dart';
 
 main() {
   runApp(MyApp());
@@ -10,8 +9,28 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "转场动画",
+      title: "主题",
       home: MJMainTranPage(),
+      theme: ThemeData(
+        // 亮度
+        brightness: Brightness.light,
+        // primaryColor/accentColor的结合体
+        primarySwatch: Colors.red,
+        // 导航/底部TabBar
+        primaryColor: Colors.blue,
+        // FloatingActionButton/按钮颜色
+        accentColor: Colors.orange,
+        // 按钮主题
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.blue,
+          minWidth: 50,
+          height: 30,
+        ),
+        // 文本主题
+        textTheme: TextTheme(
+          bodyText2: TextStyle(fontSize: 30, color: Colors.blue),
+        ),
+      ),
     );
   }
 }
@@ -20,40 +39,20 @@ class MJMainTranPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("首页"),
+      appBar: AppBar(
+        title: Text("首页"),
+      ),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text("Hello,你好啊"),
+            RaisedButton(child: Text("123"), onPressed: () {})
+          ],
         ),
-        body: GridView(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 8,
-            mainAxisSpacing: 8,
-            childAspectRatio: 16 / 9,
-          ),
-          children: List.generate(16, (index) {
-            final imageUrl = "https://picsum.photos/300/200?randoms$index";
-            return GestureDetector(
-              child: Hero(
-                tag: imageUrl,
-                child: Image.network(
-                  imageUrl,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              onTap: () {
-                Navigator.of(context).push(
-                  PageRouteBuilder(
-                    pageBuilder: (context, animation, secondaryAnimation) {
-                      return FadeTransition(
-                        opacity: animation,
-                        child: ImageDetailPage(imageUrl),
-                      );
-                    },
-                  ),
-                );
-              },
-            );
-          }),
-        ));
+      ),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.access_time), onPressed: () {}),
+    );
   }
 }
