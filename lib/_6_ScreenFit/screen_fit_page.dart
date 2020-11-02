@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/_6_ScreenFit/screen_fit_share.dart';
+import '../_6_ScreenFit/Extension/double_extension.dart';
+import '../_6_ScreenFit/Extension/int_extension.dart';
 
 main() {
   runApp(MyApp());
@@ -46,8 +48,8 @@ class MJMainTranPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-            width: MJSizeFit.setPx(200),
-            height: MJSizeFit.setrPx(400),
+            width: 200.px,
+            height: 400.rpx,
             color: Colors.orange,
             alignment: Alignment.center,
             child: Text(
