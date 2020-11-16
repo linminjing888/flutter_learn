@@ -30,7 +30,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     } else if (event is SwitchTabEvent) {
       yield state.clone()..selectedIndex = event.selectedIndex;
     } else if (event is IsExtendEvent) {
-      state.clone()..isExtended = !state.isExtended;
+      yield state.clone()..isExtended = !state.isExtended;
     }
   }
 
