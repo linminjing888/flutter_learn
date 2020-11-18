@@ -15,16 +15,6 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
   final APPStorage storage;
   GlobalBloc(this.storage) : super(GlobalState());
 
-  // @override
-  // int get initialState => 0;
-
-  // // @override
-  // // GlobalState get initialState => GlobalState();
-
-  // final APPStorage storage;
-
-  // GlobalBloc(this.storage) : super(GlobalState());
-
   Future<SharedPreferences> get sp => storage.sp;
 
   @override

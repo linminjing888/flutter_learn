@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_learn/ThemeColor/Circle.dart';
+import 'package:flutter_learn/ThemeColor/Widgets/Circle.dart';
+import 'package:flutter_learn/ThemeColor/Widgets/feedback_widget.dart';
 import 'package:flutter_learn/ThemeColor/cons.dart';
 import 'package:flutter_learn/ThemeColor/global/global_bloc.dart';
 
@@ -28,8 +29,9 @@ class ThemeColorSetting extends StatelessWidget {
       childAspectRatio: 1.5,
       shrinkWrap: true,
       children: themeColors
-          .map((e) => GestureDetector(
-                onTap: () {
+          .map((e) => FeedbackWidget(
+                a: 0.95,
+                onPressed: () {
                   BlocProvider.of<GlobalBloc>(context)
                       .add(EventSwitchThemeColor(e));
                 },
