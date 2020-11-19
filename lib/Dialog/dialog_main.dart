@@ -67,7 +67,11 @@ class CustomDialogPage extends StatelessWidget {
           title: Text("Please chose a language"),
           message: Text('the language you use in this application.'),
           cancelButton: CupertinoActionSheetAction(
-              onPressed: () => Navigator.pop(context), child: Text("Cancel")),
+              onPressed: () => Navigator.pop(context),
+              child: Text(
+                "Cancel",
+                style: TextStyle(color: Colors.red),
+              )),
           actions: <Widget>[
             CupertinoActionSheetAction(
                 onPressed: () => Navigator.pop(context), child: Text('Dart')),

@@ -6,11 +6,13 @@ import 'package:flutter_learn/ThemeColor/cons.dart';
 import 'package:flutter_learn/ThemeColor/global/global_bloc.dart';
 
 class ThemeColorSetting extends StatelessWidget {
+  static const String routeName = "/setting";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text("主题色设置"),
+          automaticallyImplyLeading: false, // 隐藏返回按钮
         ),
         body: BlocBuilder<GlobalBloc, GlobalState>(
           builder: (context, state) {
