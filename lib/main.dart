@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/ThemeColor/bloc_wrapper.dart';
-import 'package:flutter_learn/ThemeColor/bloc_main_page.dart';
+import 'package:flutter_learn/Search/app_search_page.dart';
 
 main() {
-  runApp(BlocWrapper(FlutterUnit()));
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "ceshi1",
+      home: SearchPage(),
+    );
+  }
 }
