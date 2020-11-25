@@ -3,7 +3,7 @@
  * @version: 
  * @Date: 2020-11-17 09:15:13
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-11-25 11:20:43
+ * @LastEditTime: 2020-11-25 11:19:52
  * @Descripttion: 
  */
 import 'package:flutter/material.dart';
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "ceshi1",
+      title: "侧边栏",
       home: DrawerPage(),
     );
   }

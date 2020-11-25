@@ -3,8 +3,8 @@
  * @version: 
  * @Date: 2020-11-24 16:19:43
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-11-24 17:16:57
- * @Descripttion: 
+ * @LastEditTime: 2020-11-25 10:22:32
+ * @Descripttion: 搜索页面
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/Search/app_search_bar.dart';
@@ -18,15 +18,17 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   List<String> _searchData = SearchData().searchData;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: CustomScrollView(
-      slivers: [
-        _buildSliverAppBar(),
-        _buildSliverList(),
-      ],
-    ));
+      body: CustomScrollView(
+        slivers: [
+          _buildSliverAppBar(),
+          _buildSliverList(),
+        ],
+      ),
+    );
   }
 
   Widget _buildSliverAppBar() {
