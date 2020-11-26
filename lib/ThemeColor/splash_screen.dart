@@ -5,7 +5,7 @@ import 'package:flutter_learn/ThemeColor/theme_color_setting.dart';
 
 /// Author: lin minjing
 /// Date: 2020-11-19 15:28:17
-/// Descripttion: 
+/// Descripttion: 闪屏动画
 class SplashScreen extends StatefulWidget {
   static const String routeName = "/screen";
   @override

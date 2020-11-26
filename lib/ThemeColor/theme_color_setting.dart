@@ -43,7 +43,7 @@ class ThemeColorSetting extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       gradient: LinearGradient(colors: [
-                        e[50],
+                        e[200],
                         e[500],
                         e[900],
                       ]),
