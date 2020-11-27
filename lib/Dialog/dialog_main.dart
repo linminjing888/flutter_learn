@@ -1,3 +1,11 @@
+/*
+ * @Author: lin minjing
+ * @version: 
+ * @Date: 2020-11-18 15:26:41
+ * @LastEditors: lin minjing
+ * @LastEditTime: 2020-11-27 17:53:32
+ * @Descripttion: 
+ */
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/Dialog/cupertino_alert.dart';
 import 'package:flutter_learn/Dialog/custom_dialog.dart';
@@ -29,17 +37,17 @@ class CustomDialogPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.show_chart),
         onPressed: () {
-          // showDialog(context: context, builder: (ctx) => _buildDialog());
+          showDialog(context: context, builder: (ctx) => _buildDialog());
 
           // showDialog(
           //   context: context,
           //   builder: (ctx) => _buildCupertinoDialog(),
           // );
 
-          showDialog(
-            context: context,
-            builder: (ctx) => _buildCupertinoActionSheet(context),
-          );
+          // showDialog(
+          //   context: context,
+          //   builder: (ctx) => _buildCupertinoActionSheet(context),
+          // );
         },
       ),
     );

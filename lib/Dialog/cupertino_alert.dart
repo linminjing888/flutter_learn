@@ -1,3 +1,11 @@
+/*
+ * @Author: lin minjing
+ * @version: 
+ * @Date: 2020-11-18 15:53:12
+ * @LastEditors: lin minjing
+ * @LastEditTime: 2020-11-27 17:49:37
+ * @Descripttion: 
+ */
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -13,14 +21,14 @@ class MJCupertinoDialog extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: CupertinoAlertDialog(
-          title: _buildTitle(context),
+          title: Text("提示"), //_buildTitle(context),
           content: _buildContent(),
           actions: <Widget>[
-            CupertinoButton(
+            CupertinoDialogAction(
               child: Text("Yes, Delete"),
               onPressed: () => onSubmit(),
             ),
-            CupertinoButton(
+            CupertinoDialogAction(
               child: Text("Cancle"),
               onPressed: () => Navigator.pop(context),
             ),
