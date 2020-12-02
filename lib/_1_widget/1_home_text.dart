@@ -3,7 +3,7 @@
  * @version: 
  * @Date: 2020-10-23 14:40:11
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-12-02 15:24:24
+ * @LastEditTime: 2020-12-02 17:43:56
  * @Descripttion: 
  */
 import 'package:flutter/gestures.dart';
@@ -86,13 +86,14 @@ class MJContentBody extends StatelessWidget {
               overflow: TextOverflow.ellipsis, // 文本超出范围时的处理
             ),
           ),
-          // 富文本
-          RichText(
-            text: TextSpan(
-              style: DefaultTextStyle.of(context).style,
+          // 富文本 RichText / Text.rich
+          Text.rich(
+            TextSpan(
+              text: "-- ",
+              style: TextStyle(color: Colors.black87, fontSize: 25),
               children: [
                 TextSpan(
-                    text: "Hello World6",
+                    text: "Hello World6 ",
                     style: TextStyle(color: Colors.red, fontSize: 25)),
                 TextSpan(text: "Hello World6", style: TextStyle(fontSize: 25)),
               ],

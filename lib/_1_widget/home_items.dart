@@ -9,8 +9,8 @@
 List<String> listItems = [
   "Text",
   "Status",
-  "Text",
-  "Text",
+  "Button",
+  "Image",
   "Text",
   "Text",
   "Text",

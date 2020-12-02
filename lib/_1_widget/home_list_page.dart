@@ -3,12 +3,14 @@
  * @version: 
  * @Date: 2020-12-01 17:17:42
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-12-02 10:28:42
+ * @LastEditTime: 2020-12-02 17:35:32
  * @Descripttion: 
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/_1_widget/1_home_text.dart';
 import 'package:flutter_learn/_1_widget/2_home_status.dart';
+import 'package:flutter_learn/_1_widget/3_home_button.dart';
+import 'package:flutter_learn/_1_widget/4_home_image.dart';
 import 'package:flutter_learn/_1_widget/home_items.dart';
 
 class HomeListPage extends StatelessWidget {
@@ -50,6 +52,10 @@ class HomeListPage extends StatelessWidget {
       Navigator.of(context).pushNamed(HomeTextPage.routeName);
     } else if (index == 1) {
       Navigator.of(context).pushNamed(HomeStatusPage.routeName);
+    } else if (index == 2) {
+      Navigator.of(context).pushNamed(HomeButtonPage.routeName);
+    } else if (index == 3) {
+      Navigator.of(context).pushNamed(HomeImagePage.routeName);
     }
   }
 }

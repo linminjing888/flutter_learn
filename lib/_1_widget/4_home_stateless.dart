@@ -1,18 +1,16 @@
+/*
+ * @Author: lin minjing
+ * @version: 
+ * @Date: 2020-10-23 14:40:11
+ * @LastEditors: lin minjing
+ * @LastEditTime: 2020-12-02 17:30:06
+ * @Descripttion: 
+ */
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+class HomeStatelessPage extends StatelessWidget {
+  static const String routeName = "/stateless";
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MJHomePage(),
-    );
-  }
-}
-
-class MJHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,8 +43,10 @@ class MJHomeContentItem extends StatelessWidget {
   final String subStr;
   final String imgUrl;
   MJHomeContentItem(this.title, this.subStr, this.imgUrl);
+
   final style1 = TextStyle(color: Colors.orange, fontSize: 25);
   final style2 = TextStyle(color: Colors.blue, fontSize: 20);
+
   @override
   Widget build(BuildContext context) {
     return Container(
