@@ -3,7 +3,7 @@
  * @version: 
  * @Date: 2020-10-23 14:40:11
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-12-03 17:03:15
+ * @LastEditTime: 2020-12-03 17:27:08
  * @Descripttion: 
  */
 import 'dart:math';
@@ -33,7 +33,7 @@ class CustomScrollViewDemo2 extends StatelessWidget {
     return CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
-          pinned: true,
+          pinned: true, // 是否悬浮
           expandedHeight: 230,
           flexibleSpace: FlexibleSpaceBar(
             title: Text("CustomScrollView"),
