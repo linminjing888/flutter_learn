@@ -3,16 +3,20 @@
  * @version: 
  * @Date: 2020-12-02 09:58:40
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-12-03 11:42:45
+ * @LastEditTime: 2020-12-03 17:12:47
  * @Descripttion: 
  */
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/_1_widget/10_home_nestedscrollview.dart';
 import 'package:flutter_learn/_1_widget/1_home_text.dart';
 import 'package:flutter_learn/_1_widget/2_home_status.dart';
 import 'package:flutter_learn/_1_widget/3_home_button.dart';
 import 'package:flutter_learn/_1_widget/4_home_image.dart';
 import 'package:flutter_learn/_1_widget/5_home_textfield.dart';
 import 'package:flutter_learn/_1_widget/6_home_stack.dart';
+import 'package:flutter_learn/_1_widget/7_home_listview.dart';
+import 'package:flutter_learn/_1_widget/8_home_gridview.dart';
+import 'package:flutter_learn/_1_widget/9_home_customscrollview.dart';
 import 'package:flutter_learn/_1_widget/home_list_page.dart';
 
 class HomeRouter {
@@ -24,6 +28,10 @@ class HomeRouter {
     HomeImagePage.routeName: (ctx) => HomeImagePage(),
     HomeTextFieldPage.routeName: (ctx) => HomeTextFieldPage(),
     HomeStackPage.routeName: (ctx) => HomeStackPage(),
+    HomeListViewPage.routeName: (ctx) => HomeListViewPage(),
+    HomeGridViewPage.routeName: (ctx) => HomeGridViewPage(),
+    HomeCustomScrollViewPage.routeName: (ctx) => HomeCustomScrollViewPage(),
+    HomeNestedScrollViewPage.routeName: (ctx) => HomeNestedScrollViewPage(),
   };
 
   static final String initialRoute = HomeListPage.routeName;

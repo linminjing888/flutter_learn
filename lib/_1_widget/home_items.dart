@@ -3,7 +3,7 @@
  * @version: 
  * @Date: 2020-12-02 10:21:57
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-12-03 14:43:06
+ * @LastEditTime: 2020-12-03 14:56:15
  * @Descripttion: 
  */
 List<String> listItems = [
@@ -13,7 +13,8 @@ List<String> listItems = [
   "4.Image",
   "5.TextField",
   "6.Stack/Row",
-  "7.Text",
-  "Text",
-  "Text",
+  "7.ListView",
+  "8.GridView",
+  "9.CustomScrollView",
+  "10.NestedScrollView",
 ];
