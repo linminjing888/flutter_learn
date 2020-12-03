@@ -3,7 +3,7 @@
  * @version: 
  * @Date: 2020-10-23 14:40:11
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-12-02 18:37:18
+ * @LastEditTime: 2020-12-03 11:04:26
  * @Descripttion: 
  */
 import 'package:flutter/material.dart';
@@ -68,6 +68,20 @@ class MJContentBody extends StatelessWidget {
             fit: BoxFit.fitHeight, // 适应高度
             alignment: Alignment.centerRight,
           ),
+          // 气泡拉伸 centerSlice 注：气泡图一定要小，否则报错
+          Container(
+            width: 250,
+            padding: EdgeInsets.only(left: 10, top: 10, right: 30, bottom: 10),
+            decoration: BoxDecoration(
+              color: Colors.blueAccent,
+              image: DecorationImage(
+                  centerSlice: Rect.fromLTWH(30, 50, 1, 1),
+                  image: AssetImage("assets/images/qipao.png"),
+                  fit: BoxFit.fill),
+            ),
+            child: Text(
+                "填充模式 fill：完全填充，宽高比可能会变。contain：等比拉伸，直到一边填充满。cover：等比拉伸，直到2边都填充满，此时一边可能超出范围。"),
+          )
         ],
       ),
     );
