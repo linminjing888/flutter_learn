@@ -3,11 +3,12 @@
  * @version: 
  * @Date: 2020-12-02 09:58:40
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-12-03 17:12:47
+ * @LastEditTime: 2020-12-04 11:03:27
  * @Descripttion: 
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/_1_widget/10_home_nestedscrollview.dart';
+import 'package:flutter_learn/_1_widget/11_home_dialog.dart';
 import 'package:flutter_learn/_1_widget/1_home_text.dart';
 import 'package:flutter_learn/_1_widget/2_home_status.dart';
 import 'package:flutter_learn/_1_widget/3_home_button.dart';
@@ -32,6 +33,7 @@ class HomeRouter {
     HomeGridViewPage.routeName: (ctx) => HomeGridViewPage(),
     HomeCustomScrollViewPage.routeName: (ctx) => HomeCustomScrollViewPage(),
     HomeNestedScrollViewPage.routeName: (ctx) => HomeNestedScrollViewPage(),
+    HomeDialogPage.routeName: (ctx) => HomeDialogPage(),
   };
 
   static final String initialRoute = HomeListPage.routeName;

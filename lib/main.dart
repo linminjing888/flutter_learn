@@ -3,7 +3,7 @@
  * @version: 
  * @Date: 2020-11-17 09:15:13
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-12-03 17:13:27
+ * @LastEditTime: 2020-12-04 11:07:21
  * @Descripttion: 
  */
 import 'package:flutter/material.dart';
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "学习项目",
       theme: ThemeData(
-        primaryColor: Colors.green,
+        primaryColor: Colors.blue,
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
       ),

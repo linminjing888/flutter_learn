@@ -17,4 +17,5 @@ List<String> listItems = [
   "8.GridView",
   "9.CustomScrollView",
   "10.NestedScrollView",
+  "11.Dialog",
 ];

@@ -3,57 +3,66 @@
  * @version: 
  * @Date: 2020-11-17 09:15:13
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-11-27 18:05:31
+ * @LastEditTime: 2020-12-04 11:15:21
  * @Descripttion: 
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/Dialog/cupertino_alert.dart';
-import 'package:flutter_learn/Dialog/custom_dialog.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_learn/_1_widget/11_cupertino_alert.dart';
+import 'package:flutter_learn/_1_widget/11_custom_dialog.dart';
 
-main(List<String> args) {
-  runApp(MyApp());
-}
+class HomeDialogPage extends StatelessWidget {
+  static const String routeName = "/Dialog";
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "弹窗",
-      home: CustomDialogPage(),
-    );
-  }
-}
-
-class CustomDialogPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("弹窗"),
+        title: Text("Dialog"),
       ),
-      body: Container(),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.show_chart),
-        onPressed: () {
-          // showDialog(
-          //     context: context, builder: (ctx) => _buildNormalDialog(context));
-
-          // showDialog(context: context, builder: (ctx) => _buildDialog());
-
-          // showDialog(
-          //   context: context,
-          //   builder: (ctx) => _buildCupertinoDialog(),
-          // );
-
-          // showDialog(
-          //   context: context,
-          //   builder: (ctx) => _buildCupertinoActionSheet(context),
-          // );
-
-          _buildSnackBar(context);
-        },
+      body: Center(
+        child: Column(
+          children: [
+            RaisedButton(
+              child: Text("AlertDialog"),
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (ctx) => _buildNormalDialog(context));
+              },
+            ),
+            RaisedButton(
+              child: Text("CupertinoDialog"),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (ctx) => _buildCupertinoDialog(),
+                );
+              },
+            ),
+            RaisedButton(
+              child: Text("CustomDialog"),
+              onPressed: () {
+                showDialog(context: context, builder: (ctx) => _buildDialog());
+              },
+            ),
+            RaisedButton(
+              child: Text("CupertinoActionSheet"),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (ctx) => _buildCupertinoActionSheet(context),
+                );
+              },
+            ),
+            RaisedButton(
+              child: Text("SnackBar"),
+              onPressed: () {
+                _buildSnackBar(context);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -85,6 +94,7 @@ class CustomDialogPage extends StatelessWidget {
           print("确定");
         },
       );
+
   // iOS 风格
   Widget _buildCupertinoDialog() => MJCupertinoDialog(
         title: "提示",

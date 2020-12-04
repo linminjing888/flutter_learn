@@ -3,47 +3,75 @@
  * @version: 
  * @Date: 2020-12-03 17:10:47
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-12-03 18:28:05
+ * @LastEditTime: 2020-12-04 10:55:28
  * @Descripttion: 
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/_1_widget/7_home_listview.dart';
 
 // NestedScrollView 可以在其内部嵌套其他滚动视图的滚动视图
-class HomeNestedScrollViewPage extends StatelessWidget {
+class HomeNestedScrollViewPage extends StatefulWidget {
   static const String routeName = "/NestedScrollView";
 
   @override
-  Widget build(BuildContext context) {
-    TabController _tabbarController = TabController();
+  _HomeNestedScrollViewPageState createState() =>
+      _HomeNestedScrollViewPageState();
+}
 
+class _HomeNestedScrollViewPageState extends State<HomeNestedScrollViewPage>
+    with SingleTickerProviderStateMixin {
+  TabController _tabbarController;
+  List<String> tabs = ["资讯", "技术"];
+
+  @override
+  void initState() {
+    super.initState();
+
+    _tabbarController =
+        TabController(vsync: this, initialIndex: 0, length: tabs.length);
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: _buildNestedScrollView2(), //_buildNestedScrollView1(context),
     );
   }
 
   Widget _buildNestedScrollView2() {
-    return DefaultTabController(
-      length: 2,
+    return SafeArea(
       child: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             SliverAppBar(
               expandedHeight: 230.0,
-              pinned: true,
+              pinned: false,
               flexibleSpace: Padding(
-                padding: EdgeInsets.symmetric(vertical: 8),
-                child: PageView(),
+                padding: EdgeInsets.symmetric(vertical: 0),
+                child: PageView(
+                  children: [
+                    Container(
+                      child: Image.asset(
+                        "assets/images/liu.jpeg",
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Container(
+                      child: Image.asset("assets/images/liu.jpeg",
+                          fit: BoxFit.cover),
+                    ),
+                  ],
+                ),
               ),
             ),
             SliverPersistentHeader(
               pinned: true,
               delegate: StickyTabBarDelegate(
                 child: TabBar(
+                  controller: _tabbarController,
                   labelColor: Colors.black,
                   tabs: <Widget>[
-                    Tab(text: '资讯'),
-                    Tab(text: '技术'),
+                    Tab(text: tabs[0]),
+                    Tab(text: tabs[1]),
                   ],
                 ),
               ),
@@ -51,9 +79,10 @@ class HomeNestedScrollViewPage extends StatelessWidget {
           ];
         },
         body: TabBarView(
+          controller: _tabbarController,
           children: [
-            HomeListViewPage(),
-            HomeListViewPage(),
+            HomeListView2(title: tabs[0]),
+            HomeListView2(title: tabs[1]),
           ],
         ),
       ),
@@ -100,6 +129,30 @@ class HomeNestedScrollViewPage extends StatelessWidget {
           itemCount: 20,
         ),
       ),
+    );
+  }
+}
+
+// 动态创建
+class HomeListView2 extends StatelessWidget {
+  final String title;
+  HomeListView2({this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return MediaQuery.removePadding(
+      removeTop: true,
+      context: context,
+      child: ListView.builder(
+          itemExtent: 60, // 每一个item的高度
+          itemCount: 15,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text("$title ${index + 1}"),
+              subtitle: Text("this is a description"),
+              leading: Icon(Icons.account_box),
+            );
+          }),
     );
   }
 }
