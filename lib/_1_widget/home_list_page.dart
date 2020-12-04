@@ -9,6 +9,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/_1_widget/10_home_nestedscrollview.dart';
 import 'package:flutter_learn/_1_widget/11_home_dialog.dart';
+import 'package:flutter_learn/_1_widget/12_drawer_appbar.dart';
+import 'package:flutter_learn/_1_widget/12_home_drawer.dart';
+import 'package:flutter_learn/_1_widget/13_home_animation.dart';
 import 'package:flutter_learn/_1_widget/1_home_text.dart';
 import 'package:flutter_learn/_1_widget/2_home_status.dart';
 import 'package:flutter_learn/_1_widget/3_home_button.dart';
@@ -25,9 +28,7 @@ class HomeListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Learn Demo"),
-      ),
+      appBar: DrawerAppBar(context),
       body: ListView.separated(
         separatorBuilder: (context, index) {
           return Divider();
@@ -46,6 +47,8 @@ class HomeListPage extends StatelessWidget {
           );
         },
       ),
+      drawer: DrawerBuild(),
+      // drawerEnableOpenDragGesture: false, //手势侧滑
     );
   }
 
@@ -72,6 +75,10 @@ class HomeListPage extends StatelessWidget {
       Navigator.of(context).pushNamed(HomeNestedScrollViewPage.routeName);
     } else if (index == 10) {
       Navigator.of(context).pushNamed(HomeDialogPage.routeName);
+    } else if (index == 11) {
+      print("点击左上角");
+    } else if (index == 12) {
+      Navigator.of(context).pushNamed(HomeAnimationPage.routeName);
     }
   }
 }

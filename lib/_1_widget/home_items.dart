@@ -18,4 +18,6 @@ List<String> listItems = [
   "9.CustomScrollView",
   "10.NestedScrollView",
   "11.Dialog",
+  "12.Drawer",
+  "13.Animation",
 ];

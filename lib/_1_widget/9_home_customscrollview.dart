@@ -3,7 +3,7 @@
  * @version: 
  * @Date: 2020-10-23 14:40:11
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-12-03 17:27:08
+ * @LastEditTime: 2020-12-04 14:34:15
  * @Descripttion: 
  */
 import 'dart:math';
@@ -49,7 +49,7 @@ class CustomScrollViewDemo2 extends StatelessWidget {
               color: Color.fromRGBO(Random().nextInt(256),
                   Random().nextInt(256), Random().nextInt(256), 1.0),
             );
-          }, childCount: 10),
+          }, childCount: 6),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               mainAxisSpacing: 5,

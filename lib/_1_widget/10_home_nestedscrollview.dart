@@ -3,7 +3,7 @@
  * @version: 
  * @Date: 2020-12-03 17:10:47
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-12-04 10:55:28
+ * @LastEditTime: 2020-12-04 14:32:37
  * @Descripttion: 
  */
 import 'package:flutter/material.dart';
@@ -50,10 +50,8 @@ class _HomeNestedScrollViewPageState extends State<HomeNestedScrollViewPage>
                 child: PageView(
                   children: [
                     Container(
-                      child: Image.asset(
-                        "assets/images/liu.jpeg",
-                        fit: BoxFit.cover,
-                      ),
+                      child: Image.asset("assets/images/liu.jpeg",
+                          fit: BoxFit.cover),
                     ),
                     Container(
                       child: Image.asset("assets/images/liu.jpeg",

@@ -12,7 +12,7 @@ class DrawerAppBar extends AppBar {
   final BuildContext context;
   DrawerAppBar(this.context)
       : super(
-          title: Text("Drawer"),
+          title: Text("Learn Demo"),
           leading: Builder(
             builder: (context) {
               return IconButton(
