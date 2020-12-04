@@ -3,7 +3,7 @@
  * @version: 
  * @Date: 2020-12-04 14:45:21
  * @LastEditors: lin minjing
- * @LastEditTime: 2020-12-04 16:44:29
+ * @LastEditTime: 2020-12-04 16:47:49
  * @Descripttion: 
  */
 import 'dart:math';
@@ -80,6 +80,7 @@ class _AnimationBody2State extends State<AnimationBody2>
 
   @override
   Widget build(BuildContext context) {
+    print("build2");
     return Center(
       child: GestureDetector(
         onTap: () {
@@ -171,6 +172,7 @@ class _AnimationBodyState extends State<AnimationBody>
 
   @override
   Widget build(BuildContext context) {
+    // print("build1");
     return Center(
       child: GestureDetector(
         onTap: () {
@@ -248,7 +250,6 @@ class _GroupAnimationState extends State<GroupAnimation>
 
   @override
   Widget build(BuildContext context) {
-    print("build");
     return Center(
       child: GestureDetector(
         onTap: () {

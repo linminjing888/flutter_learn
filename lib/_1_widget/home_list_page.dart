@@ -12,6 +12,7 @@ import 'package:flutter_learn/_1_widget/11_home_dialog.dart';
 import 'package:flutter_learn/_1_widget/12_drawer_appbar.dart';
 import 'package:flutter_learn/_1_widget/12_home_drawer.dart';
 import 'package:flutter_learn/_1_widget/13_home_animation.dart';
+import 'package:flutter_learn/_1_widget/14_home_hero.dart';
 import 'package:flutter_learn/_1_widget/1_home_text.dart';
 import 'package:flutter_learn/_1_widget/2_home_status.dart';
 import 'package:flutter_learn/_1_widget/3_home_button.dart';
@@ -79,6 +80,8 @@ class HomeListPage extends StatelessWidget {
       print("点击左上角");
     } else if (index == 12) {
       Navigator.of(context).pushNamed(HomeAnimationPage.routeName);
+    } else if (index == 13) {
+      Navigator.of(context).pushNamed(HomeHeroPage.routeName);
     }
   }
 }
