@@ -1,6 +1,4 @@
-# flutter_learn
-
-Flutter学习 -- 基础篇
+# Flutter学习 -- 基础篇 flutter_learn
 
 ## Getting Started
 
