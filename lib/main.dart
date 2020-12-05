@@ -8,6 +8,7 @@
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/_1_widget/home_routr.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 main(List<String> args) {
   runApp(MyApp());
@@ -25,8 +26,19 @@ class MyApp extends StatelessWidget {
         highlightColor: Colors.transparent,
       ),
       // home: HomeListPage(),
+      // 路由
       initialRoute: HomeRouter.initialRoute,
       routes: HomeRouter.routes,
+      // 国际化
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale("zh"),
+        const Locale("en"),
+      ],
     );
   }
 }

@@ -128,7 +128,7 @@ class HomeDialogPage extends StatelessWidget {
 
   _buildSnackBar(BuildContext context) {
     // 如果有新的消息时，旧的都消息立刻消失，显示新的消息
-    ScaffoldMessenger.of(context).removeCurrentSnackBar();
+    Scaffold.of(context).removeCurrentSnackBar();
 
     // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
     //   content: Text("HHH,出现问题了!"),
@@ -153,7 +153,7 @@ class HomeDialogPage extends StatelessWidget {
     // ));
 
     // 带有按钮样式
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    Scaffold.of(context).showSnackBar(SnackBar(
       content: Text("HHH,出现问题了!"),
       action: SnackBarAction(
         label: "确定",
