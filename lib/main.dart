@@ -6,9 +6,13 @@
  * @LastEditTime: 2020-12-04 11:43:56
  * @Descripttion: 
  */
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/_1_widget/home_routr.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
+import '_1_widget/18_theme_share.dart';
 
 main(List<String> args) {
   runApp(MyApp());
@@ -17,6 +21,14 @@ main(List<String> args) {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // 分辨率
+    final physicalWidth = window.physicalSize.width;
+    final physicalHeight = window.physicalSize.height;
+    print("$physicalWidth - $physicalHeight");
+    // 物理像素 / 逻辑像素
+    final dpr = window.devicePixelRatio;
+    print("dpr $dpr");
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "学习项目",
@@ -25,6 +37,10 @@ class MyApp extends StatelessWidget {
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
       ),
+      // 主题
+      // theme: MJShareTheme.normalTheme, //正常主题
+      // darkTheme: MJShareTheme.darkTheme, //暗黑主题
+
       // home: HomeListPage(),
       // 路由
       initialRoute: HomeRouter.initialRoute,

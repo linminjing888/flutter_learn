@@ -1,4 +1,4 @@
-import 'package:flutter_learn/_6_ScreenFit/screen_fit_share.dart';
+import 'package:flutter_learn/_1_widget/17_screen_fit_share.dart';
 
 extension intFit on int {
   double get px {

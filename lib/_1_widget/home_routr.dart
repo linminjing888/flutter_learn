@@ -12,7 +12,9 @@ import 'package:flutter_learn/_1_widget/11_home_dialog.dart';
 import 'package:flutter_learn/_1_widget/13_home_animation.dart';
 import 'package:flutter_learn/_1_widget/14_home_hero.dart';
 import 'package:flutter_learn/_1_widget/15_home_intl_date.dart';
-import 'package:flutter_learn/_1_widget/16_request_page.dart';
+import 'package:flutter_learn/_1_widget/16_home_request_page.dart';
+import 'package:flutter_learn/_1_widget/17_home_screen_fit_page.dart';
+import 'package:flutter_learn/_1_widget/18_home_theme.dart';
 import 'package:flutter_learn/_1_widget/1_home_text.dart';
 import 'package:flutter_learn/_1_widget/2_home_status.dart';
 import 'package:flutter_learn/_1_widget/3_home_button.dart';
@@ -42,6 +44,8 @@ class HomeRouter {
     HomeHeroPage.routeName: (ctx) => HomeHeroPage(),
     HomeIntlDatePage.routeName: (ctx) => HomeIntlDatePage(),
     HomeDioPage.routeName: (ctx) => HomeDioPage(),
+    HomeScreenFitPage.routeName: (ctx) => HomeScreenFitPage(),
+    HomeThemePage.routeName: (ctx) => HomeThemePage(),
   };
 
   static final String initialRoute = HomeListPage.routeName;

@@ -20,6 +20,7 @@ class HomeAnimationPage extends StatelessWidget {
         title: Text("Animation"),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             height: 200,

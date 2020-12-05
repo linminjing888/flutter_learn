@@ -1,33 +1,13 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/_6_ScreenFit/screen_fit_share.dart';
-import '../_6_ScreenFit/Extension/double_extension.dart';
-import '../_6_ScreenFit/Extension/int_extension.dart';
+import 'package:flutter_learn/_1_widget/17_screen_fit_share.dart';
+import '../Extension/double_extension.dart';
+import '../Extension/int_extension.dart';
 
-main() {
-  runApp(MyApp());
-}
+class HomeScreenFitPage extends StatelessWidget {
+  static const String routeName = "/ScreenFit";
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // 分辨率
-    final physicalWidth = window.physicalSize.width;
-    final physicalHeight = window.physicalSize.height;
-    print("$physicalWidth - $physicalHeight");
-    final dpr = window.devicePixelRatio;
-    print("dpr $dpr");
-
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "屏幕适配",
-      home: MJMainTranPage(),
-    );
-  }
-}
-
-class MJMainTranPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 屏幕宽高
@@ -39,12 +19,12 @@ class MJMainTranPage extends StatelessWidget {
     final bottomHeight = MediaQuery.of(context).padding.bottom;
     print("底部高度 $bottomHeight");
 
-    MJSizeFit.initialize(context);
+    MJSizeFit.initialize(context); // 初始化，一般放在MaterialApp下主页中
 
     // 局部主题
     return Scaffold(
       appBar: AppBar(
-        title: Text("首页"),
+        title: Text("ScreenFit"),
       ),
       body: Center(
         child: Container(
