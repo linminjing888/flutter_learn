@@ -1,6 +1,6 @@
 # flutter_learn
 
-A new Flutter project.
+Flutter学习 -- 基础篇
 
 ## Getting Started
 
