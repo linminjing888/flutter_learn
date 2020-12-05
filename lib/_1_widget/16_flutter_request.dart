@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_learn/Network/request_config.dart';
+import 'package:flutter_learn/_1_widget/16_request_config.dart';
 
 class MJHttpRquest {
   static final BaseOptions baseOptions = BaseOptions(
@@ -17,15 +17,16 @@ class MJHttpRquest {
 // 拦截器
     Interceptor dInter = InterceptorsWrapper(
       onRequest: (options) {
-        print("请求拦截");
+        print("请求拦截"); // 一般是添加请求的公共部分，比如添加 token：
+        options.headers['token'] = 'token00';
         return options;
       },
       onResponse: (e) {
-        print("响应拦截");
+        print("响应拦截"); // 一般用于通用数据解析等
         return e;
       },
       onError: (e) {
-        print("错误拦截");
+        print("错误拦截"); // 一般用于异常功能处理。
         return e;
       },
     );

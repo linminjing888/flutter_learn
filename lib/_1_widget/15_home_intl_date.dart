@@ -6,6 +6,7 @@
  * @LastEditTime: 2020-11-26 15:51:12
  * @Descripttion: 
  */
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeIntlDatePage extends StatelessWidget {
@@ -49,7 +50,8 @@ class HomeIntlDateBody extends StatelessWidget {
               _buildDateRangePicker(context);
             },
           ),
-          _buildCalendarDatePicker(context),
+          // _buildCalendarDatePicker(context),
+          _buildiOSDatePick(),
         ],
       ),
     );
@@ -107,6 +109,26 @@ class HomeIntlDateBody extends StatelessWidget {
       onDateChanged: (value) {
         print("$value");
       },
+    );
+  }
+
+  Widget _buildiOSDatePick() {
+    return Container(
+      height: 200,
+      color: Colors.grey.withOpacity(.5),
+      child: CupertinoDatePicker(
+        initialDateTime: DateTime.now(),
+        onDateTimeChanged: (date) {
+          print(date);
+        },
+        // 设置最大/小时间
+        // minimumDate: DateTime.now().add(Duration(days: -1)),
+        // maximumDate: DateTime.now().add(Duration(days: 1)),
+        // 设置显示模式
+        mode: CupertinoDatePickerMode.dateAndTime,
+        // 24小时制
+        use24hFormat: true,
+      ),
     );
   }
 }

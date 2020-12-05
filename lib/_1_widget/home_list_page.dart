@@ -14,6 +14,7 @@ import 'package:flutter_learn/_1_widget/12_home_drawer.dart';
 import 'package:flutter_learn/_1_widget/13_home_animation.dart';
 import 'package:flutter_learn/_1_widget/14_home_hero.dart';
 import 'package:flutter_learn/_1_widget/15_home_intl_date.dart';
+import 'package:flutter_learn/_1_widget/16_request_page.dart';
 import 'package:flutter_learn/_1_widget/1_home_text.dart';
 import 'package:flutter_learn/_1_widget/2_home_status.dart';
 import 'package:flutter_learn/_1_widget/3_home_button.dart';
@@ -85,6 +86,8 @@ class HomeListPage extends StatelessWidget {
       Navigator.of(context).pushNamed(HomeHeroPage.routeName);
     } else if (index == 14) {
       Navigator.of(context).pushNamed(HomeIntlDatePage.routeName);
+    } else if (index == 15) {
+      Navigator.of(context).pushNamed(HomeDioPage.routeName);
     }
   }
 }
