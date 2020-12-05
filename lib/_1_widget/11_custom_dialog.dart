@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/ThemeColor/Widgets/feedback_widget.dart';
+import 'package:flutter_learn/_1_widget/feedback_widget.dart';
 
 class CustomDialog extends StatelessWidget {
   final String title;
