@@ -35,6 +35,7 @@ dependencies:
   flutter_bloc: ^6.1.0 #状态管理框架
   equatable: ^1.2.5 #增强组件相等性判断
   shared_preferences: ^0.5.10
+  flutter_screenutil: ^3.2.0
 
 dev_dependencies:
   flutter_test:

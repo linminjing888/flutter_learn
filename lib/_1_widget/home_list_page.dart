@@ -27,11 +27,15 @@ import 'package:flutter_learn/_1_widget/7_home_listview.dart';
 import 'package:flutter_learn/_1_widget/8_home_gridview.dart';
 import 'package:flutter_learn/_1_widget/9_home_customscrollview.dart';
 import 'package:flutter_learn/_1_widget/home_items.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeListPage extends StatelessWidget {
   static const String routeName = "/home";
   @override
   Widget build(BuildContext context) {
+    // 初始化
+    ScreenUtil.init(context, designSize: Size(750, 1334));
+
     return Scaffold(
       appBar: DrawerAppBar(context),
       body: ListView.separated(
