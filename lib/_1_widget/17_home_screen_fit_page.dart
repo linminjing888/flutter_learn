@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/_1_widget/17_screen_fit_share.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Extension/double_extension.dart';
 import '../Extension/int_extension.dart';
 
@@ -27,16 +28,32 @@ class HomeScreenFitPage extends StatelessWidget {
         title: Text("ScreenFit"),
       ),
       body: Center(
-        child: Container(
-            width: 200.px,
-            height: 400.rpx,
-            color: Colors.orange,
-            alignment: Alignment.center,
-            child: Text(
-              "Hello,你好啊",
-              style:
-                  TextStyle(fontSize: MJSizeFit.setPx(25), color: Colors.white),
-            )),
+        child: Column(
+          children: [
+            Container(
+              width: 200.px,
+              height: 400.rpx,
+              color: Colors.orange,
+              alignment: Alignment.center,
+              child: Text(
+                "Hello,你好啊",
+                style: TextStyle(
+                    fontSize: MJSizeFit.setPx(25), color: Colors.white),
+              ),
+            ),
+            SizedBox(height: 10),
+            // flutter_screenutil
+            Container(
+                width: 300.w,
+                height: 300.w,
+                color: Colors.orange,
+                alignment: Alignment.center,
+                child: Text(
+                  "Hello,你好啊",
+                  style: TextStyle(fontSize: 40.sp, color: Colors.white),
+                ))
+          ],
+        ),
       ),
     );
   }
