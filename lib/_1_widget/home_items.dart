@@ -25,4 +25,5 @@ List<String> listItems = [
   "16.Dio",
   "17.ScreenFit",
   "18.Theme",
+  "19.Canvas"
 ];
