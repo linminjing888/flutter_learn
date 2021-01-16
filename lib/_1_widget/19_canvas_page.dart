@@ -9,6 +9,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/_1_widget/19_canvas_circle.dart';
 
 class HomeCanvasPage extends StatelessWidget {
   static const String routeName = "/canvas";
@@ -23,10 +24,11 @@ class HomeCanvasPage extends StatelessWidget {
         children: [
           Center(
             child: Container(
-              width: 150,
-              height: 150,
+              width: 160,
+              height: 160,
+              color: Colors.amber,
               child: TweenAnimationBuilder(
-                tween: Tween(begin: 0.0, end: 1.0),
+                tween: Tween(begin: 0.0, end: 0.8),
                 duration: Duration(seconds: 3),
                 builder: (BuildContext context, double value, Widget child) {
                   return CustomPaint(
@@ -56,6 +58,35 @@ class HomeCanvasPage extends StatelessWidget {
               },
             ),
           ),
+          SizedBox(height: 30),
+          Container(
+            width: 200,
+            height: 200,
+            color: Colors.amber,
+            child: Center(
+              child: TweenAnimationBuilder(
+                tween: Tween(begin: 0.0, end: 0.75),
+                duration: Duration(seconds: 3),
+                builder: (BuildContext context, double value, Widget child) {
+                  return MJCircularProgressIndicator(
+                    radius: 80,
+                    // colors: [Colors.blue],
+                    value: value,
+                    colors: [Colors.red, Colors.orange, Colors.red],
+                    // totalAngle: 1.5 * pi,
+                  );
+                },
+              ),
+            ),
+          ),
+
+          // MJCircularProgressIndicator(
+          //   colors: [Colors.blue[700], Colors.blue[300]],
+          //   radius: 80.0,
+          //   strokeWidth: 10.0,
+          //   value: 0.8,
+          //   strokeCapRound: true,
+          // ),
         ],
       ),
     );
@@ -74,7 +105,12 @@ class CircleProgressPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     double radius = min(size.width, size.height) / 2;
-    Rect rect = Rect.fromLTWH(0, 0, radius * 2, radius * 2);
+    Rect rect = Rect.fromLTWH(5, 5, radius * 2 - 10, radius * 2 - 10);
+
+    // 如果两端为圆角，则需要对起始位置进行调整，否则圆角部分会偏离起始位置
+    // 下面调整的角度的计算公式是通过数学几何知识得出，读者有兴趣可以研究一下为什么是这样
+    double _start = asin(10 / (radius * 2 - 10));
+
     // 渐变色
     Gradient gradient = SweepGradient(
         startAngle: -pi / 2,
@@ -86,7 +122,7 @@ class CircleProgressPainter extends CustomPainter {
     canvas.translate(0.0, size.height);
     canvas.rotate(-pi / 2);
 
-    canvas.drawArc(rect, 0, pi * 2 * progress, false, _paint);
+    canvas.drawArc(rect, _start, pi * 2 * progress, false, _paint);
     canvas.restore();
   }
 
@@ -108,7 +144,8 @@ class LineProgressPainter extends CustomPainter {
   Paint _paint = Paint()
     ..style = PaintingStyle.stroke
     ..strokeWidth = 10
-    ..color = Colors.blue;
+    ..color = Colors.blue
+    ..strokeCap = StrokeCap.round;
 
   @override
   void paint(Canvas canvas, Size size) {
